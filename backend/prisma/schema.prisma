@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  //url      = "file:./dev.db"
+  url      = env("DATABASE_URL")
+}
+
+model Brew {
+  id           Int      @id @default(autoincrement())
+  beans        String
+  method       String
+  coffeeGrams  Int
+  waterGrams   Int
+  rating       Int
+  notes        String
+  createdAt    DateTime @default(now())
+}
