@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.ts",
     "build": "prisma generate && prisma migrate deploy && tsc",
-    "start": "node dist/app.js",
+    "start": "node dist/app.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate" : "prisma migrate deploy"
   },
