@@ -11,7 +11,7 @@ const EditBrew = () => {
 
   useEffect(() => {
     const fetchBrew = async () => {
-      const res = await fetch(`http://localhost:4000/api/brews/${id}`);
+      const res = await fetch(`https://coffee-cafe-m8.onrender.com/${id}`);
       const data = await res.json();
       setExisting(data);
     };
@@ -32,7 +32,7 @@ const EditBrew = () => {
 
   const handleSubmit = async (data: BrewFormData) => {
     try {
-      const res = await fetch(`http://localhost:4000/api/brews/${id}`, {
+      const res = await fetch(`https://coffee-cafe-m8.onrender.com/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -52,7 +52,7 @@ const EditBrew = () => {
   const handleDelete = async () => {
     if (!window.confirm("Delete this brew?")) return;
     try {
-      await fetch(`http://localhost:4000/api/brews/${id}`, { method: "DELETE" });
+      await fetch(`https://coffee-cafe-m8.onrender.com/${id}`, { method: "DELETE" });
       alert("Brew deleted!");
       navigate("/");
     } catch (err) {
