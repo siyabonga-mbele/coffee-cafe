@@ -4,13 +4,18 @@ import BrewForm, { type BrewFormData } from "../components/BrewForm";
 const AddBrew = () => {
   const navigate = useNavigate();
 
+
+  //https://coffee-cafe-m8.onrender.com/
+  //http://localhost:4000/api/brews
+
   const handleSubmit = async (data: BrewFormData) => {
     try {
-      const res = await fetch("http://localhost:4000/api/brews", {
+      const res = await fetch("https://coffee-cafe-m8.onrender.com/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
+
 
 
 

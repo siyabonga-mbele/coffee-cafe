@@ -16,7 +16,7 @@ const BrewList = () => {
   const [brews, setBrews] = useState<Brew[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/brews")
+    fetch("https://coffee-cafe-m8.onrender.com/")
       .then(res => res.json())
       .then(data => setBrews(data))
       .catch(err => console.error("Error fetching brews:", err));
